@@ -11,7 +11,7 @@ public class WriteObjects {
     public static void main(String[] args){
         System.out.println("Writing objects");
 
-        try(FileOutputStream fr = new FileOutputStream("src\\Transient\\people.txt")){
+        try(FileOutputStream fr = new FileOutputStream("Transient\\people.txt")){
 
             ObjectOutputStream os = new ObjectOutputStream(fr);
             Person person = new Person(3, "Bob");
