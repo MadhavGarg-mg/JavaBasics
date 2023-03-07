@@ -13,16 +13,8 @@ public class ReadObjects {
         try(FileInputStream fi = new FileInputStream("Transient\\people.txt");
             ObjectInputStream oi = new ObjectInputStream(fi);){
 
-            Person[] people = (Person[])oi.readObject();
-
-            ArrayList<Person> peopleList = (ArrayList<Person>)oi.readObject();
-
-            for(Person person: people){
-                System.out.println(person);
-            }
-            for(Person person: peopleList){
-                System.out.println(person);
-            }
+            Person person = (Person) oi.readObject();
+            System.out.println(person);
         }
         catch (FileNotFoundException e){
             System.out.println("File not found");
