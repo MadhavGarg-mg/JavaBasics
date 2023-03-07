@@ -1,4 +1,4 @@
-package Serialization;
+package Transient;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,15 +11,11 @@ public class WriteObjects {
     public static void main(String[] args){
         System.out.println("Writing objects");
 
-        Person[] people = {new Person(1,"Madhav"), new Person(2, "Diksha"), new Person(3, "Rashed")};
-
-        ArrayList<Person> peopleList = new ArrayList<Person>(Arrays.asList(people));
-
-        try(FileOutputStream fr = new FileOutputStream("Serialization\\people.txt")){
+        try(FileOutputStream fr = new FileOutputStream("src\\Transient\\people.txt")){
 
             ObjectOutputStream os = new ObjectOutputStream(fr);
-            os.writeObject(people);
-            os.writeObject(peopleList);
+            Person person = new Person(3, "Bob");
+            os.writeObject(person);
         }
         catch (FileNotFoundException e){
             System.out.println("File not found");

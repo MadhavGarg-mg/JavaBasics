@@ -1,4 +1,4 @@
-package Serialization;
+package Transient;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ public class ReadObjects {
     public static void main(String[] args) {
         System.out.println("Reading Objects");
 
-        try(FileInputStream fi = new FileInputStream("Serialization\\people.txt");
+        try(FileInputStream fi = new FileInputStream("Transient\\people.txt");
             ObjectInputStream oi = new ObjectInputStream(fi);){
 
             Person[] people = (Person[])oi.readObject();
